@@ -1,0 +1,61 @@
+% !TeX root = ./main.tex
+
+% --------------------------------------------------
+% 資訊設定（Information Configs）
+% --------------------------------------------------
+
+\ntusetup{
+  university*   = {National Taiwan University},
+  university    = {國立臺灣大學},
+  college       = {理學院},
+  college*      = {College of Science},
+  institute     = {物理學研究所},
+  institute*    = {Department of Physics},
+  title         = {尋找Belle II中$B$介子三體衰變至$K$介子與二體$\pi$介子},
+  title*        = {Search for $B^+\to K^+\pi^+\pi^-$ decay at Belle II},
+  author        = {梁祐瑄},
+  author*       = {You-Hsuan Liang},
+  ID            = {R07222059},
+  advisor       = {張寶棣},
+  advisor*      = {Paoti Chang},
+  profession    = {教授},
+  date          = {2021-08-30},         % 若註解掉，則預設為當天
+  oral-date     = {2021-07-30},         % 若註解掉，則預設為當天
+  DOI           = {10.9487/NTU202109487},
+  keywords      = {Belle II實驗, $B$介子, 衰變},
+  keywords*     = {Belle II, $B$ meson, $B$ decay},
+}
+
+% --------------------------------------------------
+% 加載套件（Include Packages）
+% --------------------------------------------------
+
+%\usepackage[sort&compress]{natbib}      % 參考文獻
+\usepackage{amsmath, amsthm, amssymb}   % 數學環境
+\usepackage{ulem, CJKulem}              % 下劃線、雙下劃線與波浪紋效果
+\usepackage{booktabs}                   % 改善表格設置
+\usepackage{multirow}                   % 合併儲存格
+\usepackage{diagbox}                    % 插入表格反斜線
+\usepackage{array}                      % 調整表格高度
+\usepackage{longtable}                  % 支援跨頁長表格
+\usepackage{paralist}                   % 列表環境
+\usepackage{makecell}                   % 製作細胞格
+\usepackage{hologo}                  % 提供各種logo
+
+\usepackage{lipsum}                     % 英文亂字
+\usepackage{zhlipsum}                   % 中文亂字
+
+% --------------------------------------------------
+% 套件設定（Packages Settings）
+% --------------------------------------------------
+
+\def\arraystretch{2} % 表格使用2倍行高 
+% 定義三種新的column
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X} % 靠左對齊 自動換行
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}  % 靠左對齊 自動換行
+\newcolumntype{C}{>{\centering\arraybackslash}X}   % 置中對齊 自動換行
+
+% 不要加上header的橫線
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}

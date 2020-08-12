@@ -1,0 +1,47 @@
+% !TEX TS-program = xelatex
+% !BIB program = bibtex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[
+  oneside,
+  openright,
+  degree    = master,               % degree = master | doctor
+]{ntuthesis}
+
+\input{ntusetup}
+
+\geometry{paperwidth=20mm,paperheight=297mm, margin=0.5mm,ignoreall}
+
+% Vertical with fixed base line in a rotatebox box.
+\newCJKfontfamily\vCJKFamily[Path=./fonts/chinese/, Extension=.ttf,
+Vertical=RotatedGlyphs, RawFeature=vertical]{BiauKai}
+% Fix base line of Vertical CJK
+\def\vCJKShiftSymbol#1{\raise.35em\hbox{#1}}
+\def\vCJKBL{\let\CJKsymbol\vCJKShiftSymbol
+             \let\CJKpunctsymbol\vCJKShiftSymbol} 
+\def\vCJK#1{\vCJKBL\vCJKFamily\rotatebox{270}{#1}} % create vertical box
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\vCJK {
+    \renewcommand{\arraystretch}{1}
+%   \setstretch{1}
+    \begin{tabularx}{280mm}{l>{\centering\arraybackslash}m{3mm}c>{\centering\arraybackslash}m{3mm}X>{\centering\arraybackslash}m{3mm}c>{\centering\arraybackslash}m{3mm}rl} 
+        \fontsize{12}{12}\selectfont \ntuuniversity & 
+        \multirow{2}{*}{} &
+        \multirow{2}{*}{\fontsize{12}{12}\selectfont \ntudegree \ntutype} &
+        \multirow{2}{*}{} &
+        \multirow{2}{140mm}{\fontsize{14}{14}\selectfont \ntutitle } & 
+        \multirow{2}{*}{} &
+        \multirow{2}{*}{\fontsize{14}{14}\selectfont \ntuauthor \quad 撰} & 
+        \multirow{2}{*}{} &
+        \multirow{2}{*}{\raisebox{0.9em}{\rotatebox[origin=r]{90}{\fontsize{14}{14}\selectfont \bf\ntuyear}}} &
+        \multirow{2}{*}{\raisebox{0.3em}{\rotatebox[origin=r]{90}{\fontsize{14}{14}\selectfont \bf\ntumonth}}} \\
+        \fontsize{12}{12}\selectfont \ntuinstitute   & & & & & & & & & \\ 
+    \end{tabularx} 
+}
+\end{center}
+
+\end{document}
